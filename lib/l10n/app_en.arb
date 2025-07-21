@@ -1,0 +1,24 @@
+{
+  "app_title": "To-Do List",
+  "add_task": "Add Task",
+  "edit_task": "Edit Task",
+  "delete_task": "Delete Task",
+  "task_hint": "Enter your task...",
+  "no_tasks": "No tasks yet",
+  "mark_done": "Mark as done",
+  "done": "Done",
+  "save": "Save",
+  "cancel": "Cancel",
+  "tasks_list": "Tasks List",
+
+
+
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "dark_mode": "Dark Mode",
+  "light_mode": "Light Mode",
+
+  "english": "English",
+  "arabic": "Arabic"
+}
