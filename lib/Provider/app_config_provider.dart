@@ -4,7 +4,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AppConfigProvider extends ChangeNotifier{
   String appLanguage='en';
-ThemeMode appTheme=ThemeMode.dark;
+ThemeMode appTheme=ThemeMode.light
+  ;
   Future<void> changeLanguage(String newLanguage)async{
   if(appLanguage==newLanguage){
     return;
