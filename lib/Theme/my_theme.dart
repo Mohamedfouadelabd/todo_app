@@ -10,13 +10,23 @@ class MyTheme{
   static Color primarydark = Color(0xff060E1E);
   static Color primarylight = Color(0xffDFECDB);
   static Color black = Color(0xff000000);
+  static Color gray = Color(0xff949494);
 
 
 static ThemeData lighttheme=ThemeData(
+
+   appBarTheme: AppBarTheme(
+     backgroundColor: primary,
+     toolbarHeight: 150
+   ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor:primary ,
+      unselectedItemColor: gray,
+    ),
     bottomSheetTheme: BottomSheetThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-            top: Radius.circular(25), // تدوير من الأعلى فقط
+            top: Radius.circular(25),
           ),
         ),
         backgroundColor: MyTheme.white
@@ -49,6 +59,14 @@ bodyLarge:TextStyle(
 
 
 static ThemeData darktheme=ThemeData(
+    appBarTheme: AppBarTheme(
+        backgroundColor: primary,
+        toolbarHeight: 150
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor:primary ,
+      unselectedItemColor: gray,
+    ),
     bottomSheetTheme: BottomSheetThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
