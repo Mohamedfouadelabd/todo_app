@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:todo_app/Auth/login_screen.dart';
+import 'package:todo_app/Auth/registerr_screen.dart';
 import 'package:todo_app/Homescreen/home_screen.dart';
 import 'package:todo_app/Provider/app_config_provider.dart';
 import 'package:todo_app/SplashScreen/splash_screen.dart';
@@ -36,7 +38,8 @@ routes: {
         SplashScreen.routeName:(context) => SplashScreen(),
   HomeScreen.routeName:(context) => HomeScreen(),
 EditTaskScrren.routeName:(context) => EditTaskScrren(),
-
+  LoginScreen.routeName:(context) => LoginScreen(),
+  RegisterScreen.routeName:(context) =>RegisterScreen(),
 },
 
 
