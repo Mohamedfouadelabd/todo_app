@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/Provider/app_config_provider.dart';
 import 'package:todo_app/Settingstap/language_sheet.dart';
 import 'package:todo_app/Settingstap/theme_sheet.dart';
 import 'package:todo_app/Theme/my_theme.dart';
@@ -14,6 +16,7 @@ class SettingTap extends StatefulWidget {
 class _SettingTapState extends State<SettingTap> {
   @override
   Widget build(BuildContext context) {
+  var provider= Provider.of<AppConfigProvider>(context);
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +40,10 @@ class _SettingTapState extends State<SettingTap> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.english,
+                   provider.appLanguage=='en'?
+                    AppLocalizations.of(context)!.english:
+                   AppLocalizations.of(context)!.arabic
+                    ,
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
                   Icon(
@@ -70,6 +76,7 @@ class _SettingTapState extends State<SettingTap> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
+                   provider.isDark()?AppLocalizations.of(context)!.dark_mode:
                     AppLocalizations.of(context)!.light_mode,
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
