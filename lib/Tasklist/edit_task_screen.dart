@@ -79,7 +79,7 @@ DateTime selectedDate = DateTime.now();
                    margin: EdgeInsets.all(4),
                    child: TextFormField(
             controller: titelcontroller,
-
+                     style: Theme.of(context).textTheme.bodySmall,
 
                      validator: (text) {
                        if (text == null || text.trim().isEmpty) {
@@ -88,7 +88,7 @@ DateTime selectedDate = DateTime.now();
                        return null;
                      },
                      decoration: InputDecoration(
-                       hintText: AppLocalizations.of(context)!.task_hint,
+
                        border: OutlineInputBorder(),
                      ),
                    ),
@@ -102,6 +102,7 @@ DateTime selectedDate = DateTime.now();
                    margin: EdgeInsets.all(4),
                    child: TextFormField(
                     controller:  descontroller,
+                     style: Theme.of(context).textTheme.bodySmall,
                      validator: (text) {
                        if (text == null || text.trim().isEmpty) {
                          return 'Please enter your description';
@@ -110,7 +111,8 @@ DateTime selectedDate = DateTime.now();
                      },
                      maxLines: 3,
                      decoration: InputDecoration(
-                       hintText: 'Enter your description...',
+
+
                        border: OutlineInputBorder(),
                      ),
                    ),

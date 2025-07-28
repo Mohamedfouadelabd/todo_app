@@ -57,6 +57,9 @@ if(provider.tasklist.isEmpty){
                       },
                       decoration: InputDecoration(
                         hintText: AppLocalizations.of(context)!.task_hint,
+                        hintStyle:Theme.of(context).textTheme.bodySmall!.copyWith(
+
+                        ),
                         border: OutlineInputBorder(),
                       ),
                     ),
@@ -79,6 +82,7 @@ if(provider.tasklist.isEmpty){
                       maxLines: 3,
                       decoration: InputDecoration(
                         hintText: 'Enter your description...',
+                        hintStyle:Theme.of(context).textTheme.bodySmall,
                         border: OutlineInputBorder(),
                       ),
                     ),
