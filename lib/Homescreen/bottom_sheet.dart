@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/Firebase/firebase_utils.dart';
+import 'package:todo_app/Model/task_model.dart';
 import 'package:todo_app/Provider/app_config_provider.dart';
 import 'package:todo_app/Theme/my_theme.dart';
 
@@ -17,7 +19,9 @@ class _BottomSheetTaskState extends State<BottomSheetTask> {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<AppConfigProvider>(context);
-
+if(provider.tasklist.isEmpty){
+  provider.getAllTaskFromFIreStore();
+}
     return Padding(
       padding: EdgeInsets.only(
         bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -119,7 +123,7 @@ class _BottomSheetTaskState extends State<BottomSheetTask> {
                             : MyTheme.primary,
                       ),
                       onPressed: () {
-                        saveTask();
+                        saveTask(provider);
                       },
                       child: Text(AppLocalizations.of(context)!.save),
                     ),
@@ -146,9 +150,20 @@ class _BottomSheetTaskState extends State<BottomSheetTask> {
       });
     }
   }
-  void saveTask() {
+  void saveTask(AppConfigProvider provider) {
     if (formKey.currentState?.validate() == true) {
+Task task=Task(title: title, description: description, dateTime:selectedDate );
 
+      FirebaseUtils.addTaskToFireStore(task).timeout(
+
+          Duration(microseconds: 500),
+onTimeout: (){
+            Navigator.pop(context);
+provider.getAllTaskFromFIreStore();
+}
+
+
+      );
     }
   }
 }
