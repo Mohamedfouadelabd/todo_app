@@ -48,6 +48,12 @@ bodyLarge:TextStyle(
   fontWeight: FontWeight.bold,
   color: MyTheme.black,
 ),
+titleSmall: TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+  color: MyTheme.primary,
+),
+
 )
 
 
@@ -77,6 +83,11 @@ static ThemeData darktheme=ThemeData(
     ),
       scaffoldBackgroundColor: primarydark,
     textTheme: TextTheme(
+      titleSmall: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: MyTheme.primary,
+      ),
       bodySmall: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.bold,
