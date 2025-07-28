@@ -104,7 +104,7 @@ class _TaskItemState extends State<TaskItem> {
                         padding: EdgeInsets.all(8.0),
                         child: Text(
                           widget.task.description ?? "",
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ),
                     ],
