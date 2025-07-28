@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/Homescreen/home_screen.dart';
 import 'package:todo_app/Provider/app_config_provider.dart';
 import 'package:todo_app/SplashScreen/splash_screen.dart';
+import 'package:todo_app/Tasklist/edit_task_screen.dart';
 import 'package:todo_app/Theme/my_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 void main()async {
@@ -34,6 +35,8 @@ class MyApp extends StatelessWidget {
 routes: {
         SplashScreen.routeName:(context) => SplashScreen(),
   HomeScreen.routeName:(context) => HomeScreen(),
+EditTaskScrren.routeName:(context) => EditTaskScrren(),
+
 },
 
 

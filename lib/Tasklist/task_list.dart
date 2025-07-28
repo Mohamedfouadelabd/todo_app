@@ -7,6 +7,8 @@ import 'package:todo_app/Provider/app_config_provider.dart';
 import 'package:todo_app/Tasklist/task_item.dart';
 import 'package:todo_app/Theme/my_theme.dart';
 
+import '../Model/task_model.dart';
+
 class TaskLIst extends StatelessWidget {
 
 
@@ -16,10 +18,13 @@ class TaskLIst extends StatelessWidget {
     return Column(
       children: [
         CalendarTimeline(
-          initialDate: DateTime.now(),
+          initialDate: provider.selectdate,
           firstDate: DateTime.now().subtract(Duration(days: 365)),
           lastDate: DateTime.now().add(Duration(days: 365)),
-          onDateSelected: (date) => print(date),
+          onDateSelected: (date) {
+provider.changeDate(date);
+
+          },
           leftMargin: 20,
           monthColor:provider.isDark()?MyTheme.white:MyTheme.black ,
           dayColor: provider.isDark()?MyTheme.white:MyTheme.black,
@@ -31,13 +36,13 @@ class TaskLIst extends StatelessWidget {
           locale: 'en_ISO',
         ),
 
-Expanded(
-  child:   ListView.builder(
-    itemCount: 10,
-    itemBuilder: (context, index) {
-    return TaskItem();
-  },),
-)
+        Expanded(
+          child:   ListView.builder(
+            itemCount: provider.tasklist.length,
+            itemBuilder: (context, index) {
+              return TaskItem(task:provider. tasklist[index],);
+            },),
+        )
 
       ],
     );
