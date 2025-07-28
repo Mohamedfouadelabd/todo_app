@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/Auth/login_screen.dart';
 import 'package:todo_app/Provider/app_config_provider.dart';
 
 import '../Homescreen/home_screen.dart';
@@ -13,7 +14,7 @@ var provider =Provider.of<AppConfigProvider>(context);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.delayed(const Duration(seconds: 3), () {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) =>  HomeScreen()),
+          MaterialPageRoute(builder: (_) =>  LoginScreen()),
         );
       });
     });
